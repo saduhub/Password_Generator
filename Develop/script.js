@@ -84,114 +84,107 @@ function writePassword() {
 
     fromEachCategory = Math.floor(passwordLength/divideBy);
     let addExtra = passwordLength - (fromEachCategory * divideBy)
-    let extraChars;
+    // rewite special array name inside if statments so that it is modified by each condition when applicable . fix bugs relating opting out. scrambling and joining array
+    let specialArray;
+
+    console.log(includeSpecial, includeNumerical, includeLowercase, includeUppercase)
+    console.log(passwordLength, divideBy, fromEachCategory, addExtra)
 
     if (includeSpecial === "y") {
-      function generateExtraSpecialString (addExtra) {
         let counter = 0;
-        let specialString = "";
+        specialArray = [];
         while (counter < addExtra) {
-          let specialPushed = String.fromCharCode(Math.floor(Math.random() * 33) + 127);
-          specialString += specialPushed;
+          let specialPushed = String.fromCharCode(Math.floor(Math.random() * 15) + 33);
+          specialArray.push(specialPushed);
           counter++
         }
-        return specialString;
-      } 
-      extraChars = generateExtraSpecialString();
-    } else if (includeNumerical === "y") {
-      function generateExtraNumberString (addExtra) {
+      } else if (includeNumerical === "y") {
         let counter = 0;
-        let numberString = "";
+        let numberArray = [];
         while (counter < addExtra) {
           let numberPushed = Math.floor(Math.random() * 10)
-          numberString += numberPushed.toString();
+          numberArray.push(numberPushed.toString());
           counter++
         }
-        return numberString;
-      }
-      extraChars = generateExtraNumberString();
-    } else if (includeLowercase === "y") {
-      function generateExtraLowerString (addExtra) {
+        console.log(numberArray)
+      } else if (includeLowercase === "y") {
         let counter = 0;
-        let lowerString = "";
+        let lowerArray = [];
         while (counter < addExtra) {
           let lowerPushed = String.fromCharCode(97 + Math.floor(Math.random() * 26));
-          lowerString += lowerPushed;
+          lowerArray.push(lowerPushed);
           counter++
         }
-        return lowerString;
-      }
-      extraChars = generateExtraLowerString();
-    } else if (includeUppercase === "y") {
-      function generateExtraUpperString (addExtra) {
+        console.log(lowerArray);
+      } else if (includeUppercase === "y") {
         let counter = 0;
-        let upperString = "";
+        let upperArray = [];
         while (counter < addExtra) {
           let upperPushed = String.fromCharCode(65 + Math.floor(Math.random() * 26));
-          upperString += upperPushed;
+          upperArray.push(upperPushed);
           counter++
         }
-        return upperString;
       }
-      extraChars = generateExtraUpperString();
-    }
 
+    let numbers = [];
     function generateNumberString (fromEachCategory) {
       let counter = 0;
-      let numberString = "";
+      let numberArray = [];
       while (counter < fromEachCategory) {
         let numberPushed = Math.floor(Math.random() * 10)
-        numberString += numberPushed.toString();
+        numberArray.push(numberPushed.toString());
         counter++
       }
-      return numberString;
+      return numbers = numberArray;
     }
-    let numbers = generateNumberString();
+    generateNumberString(fromEachCategory);
 
+    let specials = [];
     function generateSpecialString (fromEachCategory) {
       let counter = 0;
-      let specialString = "";
+      let specialArray = [];
       while (counter < fromEachCategory) {
-        let specialPushed = String.fromCharCode(Math.floor(Math.random() * 33) + 127);
-        specialString += specialPushed;
+        let specialPushed = String.fromCharCode(Math.floor(Math.random() * 15) + 33);
+        specialArray.push(specialPushed);
         counter++
       }
-      return specialString;
+      return specials = specialArray;
     }
-    let specials = generateSpecialString();
+    generateSpecialString(fromEachCategory);
 
+    let lowers = []
     function generateLowerString (fromEachCategory) {
       let counter = 0;
-      let lowerString = "";
+      let lowerArray = [];
       while (counter < fromEachCategory) {
         let lowerPushed = String.fromCharCode(97 + Math.floor(Math.random() * 26));
-        lowerString += lowerPushed;
+        lowerArray.push(lowerPushed);
         counter++
       }
-      return lowerString;
+      return lowers = lowerArray;
     }
-    let lowers = generateLowerString();
+    generateLowerString(fromEachCategory);
 
+    let uppers = [];
     function generateUpperString (fromEachCategory) {
       let counter = 0;
-      let upperString = "";
+      let upperArray = [];
       while (counter < fromEachCategory) {
         let upperPushed = String.fromCharCode(65 + Math.floor(Math.random() * 26));
-        upperString += upperPushed;
+        upperArray.push(upperPushed);
         counter++
       }
-      return upperString;
+      return uppers = upperArray;
     }
-    let uppers = generateUpperString();
+    generateUpperString(fromEachCategory);
 
-    let finalString = numbers + specials + lowers + uppers + extraChars;
-
-    return finalString;
+    let finalArray = [...uppers, ...lowers, ...specials, ...numbers, ...specialArray] 
+    return console.log(finalArray);
   }
 
   let password = generatePassword();
 
-  return password;
+  return console.log(password);
 
 
   var passwordText = document.querySelector("#password");
