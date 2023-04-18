@@ -97,7 +97,7 @@ function writePassword() {
         specialArray = [];
         while (counter < addExtra) {
           let specialPushed = String.fromCharCode(Math.floor(Math.random() * 15) + 33);
-          specialArray.push(specialPushed);
+          finalArray.push(specialPushed);
           counter++
         }
       } else if (includeNumerical === "y") {
@@ -174,14 +174,14 @@ function writePassword() {
     return finalArray;
   }
 
-  let password = generatePassword();
-
-  return console.log(password);
+  let generatedArray = generatePassword();
+  // modifies generatedArray - sorts it randomly and makes it into a string
+  let sortedArrayJoin = generatedArray.sort(() => Math.random() - 0.5).join('');
 
 
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = sortedArrayJoin;
 
 }
 
