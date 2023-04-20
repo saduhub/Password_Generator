@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 var textArea = document.querySelector("#password");
 
+// Run code until page has fully loaded - allows us to call it after each password generated.
 window.onload = function() {  
 
   // 02 - Validate user inputs
