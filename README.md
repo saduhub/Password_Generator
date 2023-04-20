@@ -6,8 +6,8 @@ The motivation behind this project was to solidify my knowledge of Javascript. I
 
 Link to deployed application [here](https://saduhub.github.io/Password_Generator/)
 
-![Screenshot of prompt](assets/User_Prompt.png)
-![Screenshot of output](assets/Output.png)
+![Screenshot of prompt](Assets/User_Prompt.png)
+![Screenshot of output](Assets/Output.png)
 
 ## Installation
 
