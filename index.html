@@ -8,41 +8,47 @@
     <link rel="stylesheet" href="Develop/style.css" />
   </head>
   <body>
-    <h1 id="pwGenH1">Password Generator</h1>
+    <h1 id="passwordGeneratorH1">Password Generator</h1>
     <form id="passwordGeneratorForm">
       <!-- Password Length -->
       <fieldset id="pwLengthFieldset">
         <legend>Select password length:</legend>
-        <input type="radio" id="length8" name="passwordLength" value="8">
-        <label for="length8">8</label>
-
-        <input type="radio" id="length10" name="passwordLength" value="10">
-        <label for="length10">10</label>
-
-        <input type="radio" id="length12" name="passwordLength" value="12">
-        <label for="length12">12</label>
-
-        <input type="radio" id="length14" name="passwordLength" value="14">
-        <label for="length14">14</label>
-
-        <input type="radio" id="length16" name="passwordLength" value="16">
-        <label for="length16">16</label>
-      </fieldset>
+        <select id="passwordLength" name="passwordLength">
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+        </select>
+    </fieldset>
       <!-- Password Conditions -->
       <fieldset id="pwConditionsFieldset">
         <legend>Select character types:</legend>
-        <input type="checkbox" id="lowercase" name="charType" value="lowercase">
-        <label for="lowercase">Lowercase</label>
-
-        <input type="checkbox" id="uppercase" name="charType" value="uppercase">
-        <label for="uppercase">Uppercase</label>
-
-        <input type="checkbox" id="specialCharacters" name="charType" value="specialCharacters">
-        <label for="specialCharacters">Special Characters</label>
-
-        <input type="checkbox" id="numbers" name="charType" value="numbers">
-        <label for="numbers">Numbers</label>
-      </fieldset>
+        <!-- Lowercase -->
+        <label for="lowercase">Lowercase:</label>
+        <select id="lowercase" name="charTypeLowercase">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+        <!-- Uppercase -->
+        <label for="uppercase">Uppercase:</label>
+        <select id="uppercase" name="charTypeUppercase">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+        <!-- Special -->
+        <label for="specialCharacters">Special Characters:</label>
+        <select id="specialCharacters" name="charTypeSpecial">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+        <!-- Numbers -->
+        <label for="numbers">Numbers:</label>
+        <select id="numbers" name="charTypeNumbers">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+    </fieldset>
       <button type="submit" id="generateButton">Generate!</button>
     </form>
     <!-- Password Output -->
