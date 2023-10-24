@@ -41,6 +41,13 @@ body {
   background-color: rgb(28 25 23);
   color: white;
   font-family: 'Work Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 400px;
+  height: 100vh;
+  margin: auto auto;
+  justify-content: center;
 }
 
 #root {
@@ -49,4 +56,28 @@ body {
   align-items: center;     
   height: 100vh;           
   width: 100vw;           
+}
+
+#passwordGeneratorH1{
+  color: aquamarine;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+#passwordGeneratorForm{
+  text-align: center;
+}
+
+#pwConditionsFieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+#generateButton {
+  margin: 1rem auto;
+}
+
+#pwOutput {
+  display: flex;
+  flex-direction: column;
 }
