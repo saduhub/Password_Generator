@@ -1,137 +1,83 @@
-*,
-*::before,
-*::after {
+/* Josh W Comeau Reset */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html,
-body,
-.wrapper {
-  height: 100%;
+* {
   margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
-}
-
-.card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
-}
-
-.card-header::after {
-  content: " ";
+img, picture, video, canvas, svg {
   display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
+  max-width: 100%;
 }
 
-.card-body {
-  min-height: 100px;
+input, button, textarea, select {
+  font: inherit;
 }
 
-.card-footer {
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+/* Font */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../Assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;  
+  font-style: normal;
+}
+
+/* Additional Global Styles */
+body {
+  background-color: rgb(28 25 23);
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 400px;
+  height: 100vh;
+  margin: auto auto;
+  justify-content: center;
+}
+
+#root {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;           
+  width: 100vw;           
+}
+
+#passwordGeneratorH1{
+  color: aquamarine;
+  margin: 2rem auto;
   text-align: center;
 }
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-.btn {
-  border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+#passwordGeneratorForm{
   text-align: center;
-  cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
+#pwConditionsFieldset {
+  display: flex;
+  flex-direction: column;
 }
 
-.float-right {
-  float: right;
+#generateButton {
+  margin: 1rem auto;
 }
 
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
-}
-
-@media (max-width: 690px) {
-  .btn {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
-  }
-
-  #password {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
-  }
+#pwOutput {
+  display: flex;
+  flex-direction: column;
 }

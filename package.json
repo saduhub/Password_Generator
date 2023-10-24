@@ -1,0 +1,15 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "description": "The motivation behind this project was to solidify my knowledge of Javascript. I was to build a password generator algorithm from scratch using my knowledge of Javascript. Additionaly, this challenge introduced me to concepts regarding DOM manipulation. I also learned about pseudocode and the importance of writting out what code does before coding. This way, I can understand the overall algorithm structure. Learning about scope and window methods was also crucial for completing this project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}

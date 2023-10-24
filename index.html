@@ -8,27 +8,55 @@
     <link rel="stylesheet" href="Develop/style.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          >Hi</textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
+    <h1 id="passwordGeneratorH1">Password Generator</h1>
+    <form id="passwordGeneratorForm">
+      <!-- Password Length -->
+      <fieldset id="pwLengthFieldset">
+        <legend>Select password length:</legend>
+        <select id="passwordLength" name="passwordLength">
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+        </select>
+    </fieldset>
+      <!-- Password Conditions -->
+      <fieldset id="pwConditionsFieldset">
+        <legend>Select character types:</legend>
+        <!-- Lowercase -->
+        <label for="lowercase">Lowercase:</label>
+        <select id="lowercase" name="charTypeLowercase">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+        <!-- Uppercase -->
+        <label for="uppercase">Uppercase:</label>
+        <select id="uppercase" name="charTypeUppercase">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+        <!-- Special -->
+        <label for="specialCharacters">Special Characters:</label>
+        <select id="specialCharacters" name="charTypeSpecial">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+        <!-- Numbers -->
+        <label for="numbers">Numbers:</label>
+        <select id="numbers" name="charTypeNumbers">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+        </select>
+    </fieldset>
+      <button type="submit" id="generateButton">Generate!</button>
+    </form>
+    <!-- Password Output -->
+    <div id="pwOutput">
+      <label for="generatedPassword">Generated Password:</label>
+      <textarea id="generatedPassword" readonly></textarea>
     </div>
+    <!-- Scripts -->
     <script src="Develop/script.js"></script>
-  </body>
+</body>
 </html>
